@@ -1,12 +1,5 @@
-import {
-  Box,
-  Container,
-  Stack,
-  SxProps,
-  Typography,
-  Button,
-} from "@mui/material";
-import { LOREM } from "@/demo/constants";
+import { ReactNode } from "react";
+import { Box, Container, Stack, SxProps, Typography } from "@mui/material";
 
 const _sx: Record<string, SxProps> = {
   root: {
@@ -37,9 +30,21 @@ const _sx: Record<string, SxProps> = {
 interface HeroSectionProps {
   sx?: SxProps;
   align?: "left" | "right" | "center";
+
+  title?: ReactNode;
+  content?: ReactNode;
+  button?: ReactNode;
+  children?: ReactNode;
 }
 
-const HeroSection = ({ sx, align = "left" }: HeroSectionProps): JSX.Element => {
+const HeroSection = ({
+  sx,
+  align = "left",
+  title,
+  content,
+  button,
+  children,
+}: HeroSectionProps): JSX.Element => {
   return (
     <Box sx={{ ..._sx.root, ...sx } as SxProps}>
       <Container sx={_sx.container}>
@@ -54,15 +59,17 @@ const HeroSection = ({ sx, align = "left" }: HeroSectionProps): JSX.Element => {
           }
           spacing={2}
         >
-          <Typography variant="h2" sx={_sx.title}>
-            Title
-          </Typography>
-          <Typography variant="subtitle1" sx={_sx.subtext}>
-            {LOREM}
-          </Typography>
-          <Button variant="contained" color="secondary" size="large">
-            Click Me!!
-          </Button>
+          {children || (
+            <>
+              <Typography variant="h2" sx={_sx.title}>
+                {title}
+              </Typography>
+              <Typography variant="subtitle1" sx={_sx.subtext}>
+                {content}
+              </Typography>
+              {button}
+            </>
+          )}
         </Stack>
       </Container>
     </Box>

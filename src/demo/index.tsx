@@ -1,4 +1,4 @@
-import Hero from "@/features/home/sections/HeroSection";
+import HeroSection from "@/features/home/sections/HeroSection";
 import MediaContentSection from "@/features/home/sections/MediaContentSection";
 import { Button } from "@mui/material";
 import { LOREM } from "./constants";
@@ -6,7 +6,15 @@ import { LOREM } from "./constants";
 const DemoPage = (): JSX.Element => {
   return (
     <>
-      <Hero />
+      <HeroSection
+        title="Title"
+        content={LOREM}
+        button={
+          <Button variant="contained" color="secondary" size="large">
+            Click Me!!
+          </Button>
+        }
+      />
       <MediaContentSection
         image={{
           url: "https://images.unsplash.com/photo-1682695798256-28a674122872?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
