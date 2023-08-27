@@ -1,11 +1,11 @@
 {
   "name": "poprvr-react-ui-kit",
   "description": "React MUI Component for general website",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
-  "main": "./dist/main.cjs.js",
-  "module": "./dist/main.esm.js",
-  "types": "/dist/dts/main.d.ts",
+  "main": "./dist/main.cjs",
+  "module": "./dist/main.esm",
+  "types": "/dist/dts/main",
   "files": [
     "dist/**"
   ],
