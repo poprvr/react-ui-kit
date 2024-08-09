@@ -10,7 +10,7 @@
     "dist/**"
   ],
   "scripts": {
-    "dev": "vite --port 3000 demo/main.tsx",
+    "dev": "vite --port 3000 main.tsx",
     "build": "rollup -c",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -23,6 +23,7 @@
     "@mui/material": "^5.14.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.52.2",
     "react-router-dom": "^6.15.0"
   },
   "devDependencies": {
